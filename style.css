@@ -1,0 +1,47 @@
+img {
+  
+    height: 500px;
+    
+}
+
+.main{
+display: flex;
+width: 100%;
+height: auto;
+    justify-content:center;
+}
+.callBack{
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    background-color: green;
+    color: white;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0,0 , 0.2);
+    bottom: 50px;
+    right: 20px;
+    cursor: pointer;
+    font-family: 'Segoe UI', sans-serif;
+    z-index: 100;
+    opacity: 0;
+    transition: background-color 0.3s ease;
+    animation: fade 1.5s ease forwards;
+    animation-delay:0.5s; 
+}
+@keyframes fade{
+
+    to{
+        opacity: 1;
+    }
+}
+.callBack:hover{
+    background-color: rgb(3, 95,3);
+}
+  .image-section {
+    flex: 1.2;
+    background: linear-gradient(to bottom left, #002fff, #ffffff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+  }
