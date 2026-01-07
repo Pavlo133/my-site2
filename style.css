@@ -1,47 +1,71 @@
+/* Зображення адаптивне */
 img {
-  
-    height: 500px;
-    
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
-.main{
-display: flex;
-width: 100%;
-height: auto;
-    justify-content:center;
+/* Основний блок */
+.main {
+    display: flex;
+    flex-wrap: wrap; /* щоб на мобільних переносилося */
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
 }
-.callBack{
+
+/* Блок з зображенням */
+.image-section {
+    flex: 1 1 400px; /* адаптивна ширина */
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+/* Кнопка зворотнього дзвінка */
+.callBack {
     width: 70px;
     height: 70px;
     position: fixed;
     background-color: green;
-    color: white;
-    border-radius: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0,0 , 0.2);
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     bottom: 50px;
     right: 20px;
     cursor: pointer;
     font-family: 'Segoe UI', sans-serif;
     z-index: 100;
     opacity: 0;
-    transition: background-color 0.3s ease;
-    animation: fade 1.5s ease forwards;
-    animation-delay:0.5s; 
-}
-@keyframes fade{
-
-    to{
-        opacity: 1;
-    }
-}
-.callBack:hover{
-    background-color: rgb(3, 95,3);
-}
-  .image-section {
-    flex: 1.2;
-    background: linear-gradient(to bottom left, #002fff, #ffffff);
+    transition: all 0.3s ease;
+    animation: fadeIn 1.5s ease forwards;
+    animation-delay: 0.5s;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 30px;
-  }
+    font-size: 18px;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.callBack:hover {
+    background-color: rgb(3, 95, 3);
+}
+
+/* Адаптивність для мобільних */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .image-section {
+        padding: 10px;
+    }
+}
